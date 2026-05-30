@@ -25,6 +25,10 @@ class InfiniteLogicPrisonApp extends StatelessWidget {
   }
 }
 
+class MyApp extends InfiniteLogicPrisonApp {
+  const MyApp({super.key});
+}
+
 class GameScreen extends StatefulWidget {
   const GameScreen({super.key});
 
