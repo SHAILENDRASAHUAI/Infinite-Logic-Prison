@@ -63,14 +63,14 @@ class _GameScreenState extends State<GameScreen> {
         timer.cancel();
         return;
       }
-      if (_remainingSeconds <= 1) {
+      setState(() {
+        _remainingSeconds -= 1;
+      });
+      if (_remainingSeconds <= 0) {
         timer.cancel();
         _handleAnswer(-1, timedOut: true);
         return;
       }
-      setState(() {
-        _remainingSeconds -= 1;
-      });
     });
     setState(() {});
   }
@@ -191,7 +191,7 @@ class _GameScreenState extends State<GameScreen> {
                       ),
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
-                        value: timerProgress.clamp(0, 1).toDouble(),
+                        value: timerProgress.clamp(0, 1),
                         minHeight: 6,
                         borderRadius: BorderRadius.circular(10),
                       ),
