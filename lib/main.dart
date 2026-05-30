@@ -64,7 +64,7 @@ class _GameScreenState extends State<GameScreen> {
         return;
       }
       setState(() {
-        _remainingSeconds = (_remainingSeconds - 1).clamp(0, _questionTimeLimit).toInt();
+        _remainingSeconds = (_remainingSeconds - 1).clamp(0, _questionTimeLimit);
       });
       if (_remainingSeconds <= 0) {
         timer.cancel();
