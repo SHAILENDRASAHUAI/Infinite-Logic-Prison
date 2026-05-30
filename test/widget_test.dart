@@ -8,6 +8,7 @@ void main() {
 
     expect(find.text('Infinite Logic Prison'), findsOneWidget);
     expect(find.text('Solve with logic only. No luck mechanics.'), findsOneWidget);
+    expect(find.text('Time Left: 15s'), findsOneWidget);
     expect(find.widgetWithText(TextField, 'Search notebook clues'), findsOneWidget);
     expect(find.byType(ElevatedButton), findsAtLeastNWidgets(1));
   });
