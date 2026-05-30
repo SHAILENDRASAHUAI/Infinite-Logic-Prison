@@ -64,7 +64,7 @@ class _GameScreenState extends State<GameScreen> {
         return;
       }
       setState(() {
-        _remainingSeconds -= 1;
+        _remainingSeconds = (_remainingSeconds - 1).clamp(0, _questionTimeLimit).toInt();
       });
       if (_remainingSeconds <= 0) {
         timer.cancel();
@@ -191,7 +191,7 @@ class _GameScreenState extends State<GameScreen> {
                       ),
                       const SizedBox(height: 8),
                       LinearProgressIndicator(
-                        value: timerProgress.clamp(0, 1),
+                        value: timerProgress,
                         minHeight: 6,
                         borderRadius: BorderRadius.circular(10),
                       ),
